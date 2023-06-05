@@ -23,7 +23,7 @@ fn main() {
         3 => add_fancy_hat(),
         7 => remove_fancy_hat(),
         _ => reroll(), // variable을 쓸거라면 other, 아니면 _
-        // _ => (), Unit value도 됨
+                       // _ => (), Unit value도 됨
     }
 
     let config_max = Some(3u8);
@@ -38,7 +38,7 @@ fn main() {
 
     // if let is syntax sugar for a match that runs code when the
     // value matches one pattern and then ignores all other values.
-    if let Some(max) = config_max {
+    if let Result::Err(max) = config_max {
         println!("The maximum is configured to be {}", max)
     }
 
@@ -65,7 +65,7 @@ fn value_in_cents(coin: Coin) -> u8 {
         Coin::Quarter(state) => {
             println!("State quarter from {:?}!", state);
             25
-        },
+        }
     }
 }
 

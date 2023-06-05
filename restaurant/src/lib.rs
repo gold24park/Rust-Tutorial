@@ -33,7 +33,7 @@ mod back_of_house {
         pub fn summer(toast: &str) -> Breakfast {
             Breakfast {
                 toast: String::from(toast),
-                seasonal_fruit: String::from("peaches")
+                seasonal_fruit: String::from("peaches"),
             }
         }
     }
@@ -52,8 +52,8 @@ mod back_of_house {
 // restaurant::hosting::add_to_waitlist()
 
 // [?] 왜 못찾지?
-pub use crate::front_of_house::hosting;
+mod front_of_house;
 
 pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
+    front_of_house::hosting::add_to_waitlist();
 }
