@@ -22,7 +22,7 @@ impl Post {
     }
 
     pub fn content(&self) -> &str {
-        &self.content
+        ""
     }
 }
 
